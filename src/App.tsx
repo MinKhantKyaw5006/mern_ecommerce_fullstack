@@ -1,20 +1,22 @@
-import './App.css'
-import { Button } from './components/ui/button'
+// src/App.tsx
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './pages/Home'; // Import Home component correctly
+
 
 function App() {
-  
-
   return (
-    <>
-  
-      <h1 className="text-xl font-semibold mb-4">
-        Ecommerce website with Vite + React
-      </h1>
-        <Button>Click me for more</Button>
-  
-      
-    </>
-  )
+    <Router> {/* Wrap everything in Router */}
+      <Header/>
+      <Routes>
+        {/* Set up route for the home page */}
+        <Route path="/" element={<Home />} />
+      </Routes>
+
+
+    </Router>
+  );
 }
 
-export default App
+export default App;

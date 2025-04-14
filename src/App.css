@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 100%; /* Remove width limiting */
   margin: 0; /* Remove auto-centering */
-  padding: 1rem; /* Adjust padding to your liking */
+  padding: 0; /* Adjust padding to your liking */
   text-align: left;
 }
 
