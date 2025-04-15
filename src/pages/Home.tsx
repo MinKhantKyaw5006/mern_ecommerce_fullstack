@@ -1,20 +1,24 @@
 
 import ShopItemCard from "@/components/Home/ShopItemCard";
-import { Button } from "@/components/ui/button";
+
 
 // src/pages/Home.tsx
 const Home = () => {
     return (
-    <>
-  
-      <div className="">
-
-        <h1 className="text-black">Welcome to Home Page!!</h1>
+      <section className="container mx-auto mt-2 mb-2">
+        <div>
+          <h1>Best Popular Items</h1>
+          <h4>Don't miss out</h4>
+        </div>
+      <div className="  flex items-center justify-betweenpx-2 py-10 rounded-lg shadow mt-2 ">
         <ShopItemCard/>
 
+
       </div>
-      <Button>Click for more</Button>
-    </>
+      <div className="mb-10 mt-10">
+          class
+        </div>
+    </section>
     );
   };
   
