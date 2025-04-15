@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ShoppingCart } from "lucide-react";
 import Allcategories from './Header/Allcategories';
 import CategoryNav from '@/components/Header/CategoryNav';
-import Testdropdown from './Header/Testdropdown';
+
 
 
 
@@ -89,12 +89,7 @@ const Header = () => {
       </div>
     </section>
 
-    <section className="container mx-auto mt-2 mb-2">
-      <div className="flex items-center justify-between gap-2 bg-white px-2 py-2 rounded-lg shadow">
 
-      <Testdropdown/>
-      </div>
-    </section>
 
     </>
   );

@@ -12,7 +12,7 @@ const CategoryNav = () => {
   const currentCategory = location.pathname.split('/')[1];
 
   return (
-    <nav className="flex flex-wrap items-center gap-8 text-sm font-medium text-gray-700">
+    <nav className="flex flex-wrap items-center gap-10 text-sm font-medium text-gray-700 mb-1">
       {categories.map(({ value, label, icon: Icon, subcategories }) => {
         const isActive = currentCategory === value;
 

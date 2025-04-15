@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import { createContext, useEffect } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
+import HomeBanner from './components/HomeBanner';
 
 // Context type
 interface AppContextType {
@@ -55,6 +56,7 @@ const AppContent = () => {
   return (
     <Mycontext.Provider value={values}>
       <Header />
+      <HomeBanner/>
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
