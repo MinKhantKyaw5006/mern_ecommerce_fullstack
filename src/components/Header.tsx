@@ -6,7 +6,7 @@ import SearchBar from './SearchBar';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ShoppingCart } from "lucide-react";
 import Allcategories from './Allcategories';
-
+import { categories } from "@/constants/categories"; // make sure it's imported
 
 
 const Header = () => {
@@ -73,11 +73,27 @@ const Header = () => {
       </section>  
 
      {/*third section*/}
-      <section className="container mx-auto mt-2 mb-2">
-        <div>
-          <Allcategories />
-        </div>
-      </section>
+    <section className="container mx-auto mt-2 mb-2">
+      <div className="flex items-center justify-between gap-4 bg-white px-4 py-2 rounded-lg shadow">
+
+        {/* All Categories Dropdown */}
+        <Allcategories />
+
+        {/* Dynamic Category Navigation Links */}
+        <nav className="flex flex-wrap items-center gap-4 text-sm font-medium text-gray-700">
+          {categories.map(({ value, label }) => (
+            <Link
+              key={value}
+              to={`/${value}`}
+              className="hover:text-blue-500 transition"
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+
+      </div>
+    </section>
 
     </>
   );

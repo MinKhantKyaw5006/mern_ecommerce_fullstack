@@ -3,36 +3,24 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Button } from "@/components/ui/button";
 import { Command, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { MapPin } from "lucide-react";
+import { locations } from "@/constants/locations"; // ✅ import locations here
 
-
-
-// Define props interface for SelectLocation component
 interface SelectLocationProps {
-  selectedLocation: string; // The currently selected location to display
-  onSelectLocation: (location: string) => void; // Callback function to handle the location selection
+  selectedLocation: string;
+  onSelectLocation: (location: string) => void;
 }
 
-// List of available locations
-const locations = [
-  "New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia",
-  "San Antonio", "San Diego", "Dallas", "San Jose", "Austin", "Jacksonville", "Fort Worth",
-  "Columbus", "Charlotte", "Indianapolis", "San Francisco", "Seattle", "Denver", "Washington",
-];
-
 const SelectLocation: React.FC<SelectLocationProps> = ({ selectedLocation, onSelectLocation }) => {
-   // State to manage whether the popover is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
-    // Function that is called when a location is selected
   const handleLocationSelect = (location: string) => {
-    onSelectLocation(location);// Update the selected location using the passed-in callback
-    setIsOpen(false); // Close the popover after selection
+    onSelectLocation(location);
+    setIsOpen(false);
   };
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
-        {/* Button content */}
         <Button
           variant="outline"
           className="w-[160px] h-[40px] text-left flex items-center gap-2 py-2 px-3 border border-gray-300 rounded-md shadow-sm overflow-hidden"
@@ -46,10 +34,8 @@ const SelectLocation: React.FC<SelectLocationProps> = ({ selectedLocation, onSel
             {selectedLocation || "Select location"}
           </span>
         </Button>
-
       </PopoverTrigger>
 
-      {/* Popover content that shows the list of locations */}
       <PopoverContent className="w-[220px] p-0 border border-gray-300 rounded-md shadow-md">
         <Command className="max-h-60 overflow-y-auto">
           <CommandInput placeholder="Search location..." />
@@ -61,7 +47,7 @@ const SelectLocation: React.FC<SelectLocationProps> = ({ selectedLocation, onSel
             ))}
           </CommandList>
         </Command>
-      </PopoverContent> 
+      </PopoverContent>
     </Popover>
   );
 };
