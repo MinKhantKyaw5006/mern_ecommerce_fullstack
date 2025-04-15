@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState ,useContext } from 'react';
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Command, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { MapPin } from "lucide-react";
-import { locations } from "@/constants/locations"; // ✅ import locations here
+//import { locations } from "@/constants/locations"; // ✅ import locations here
+import { Mycontext } from "@/App"; // ✅ Import the context
 
 interface SelectLocationProps {
   selectedLocation: string;
@@ -17,6 +18,12 @@ const SelectLocation: React.FC<SelectLocationProps> = ({ selectedLocation, onSel
     onSelectLocation(location);
     setIsOpen(false);
   };
+
+   // Get countryList from context
+   const context = useContext(Mycontext);
+
+   // Check if the context is available and countryList is available
+   const countries = context?.countryList?.map(country => country.country) || []; // Extract country names
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
@@ -40,9 +47,16 @@ const SelectLocation: React.FC<SelectLocationProps> = ({ selectedLocation, onSel
         <Command className="max-h-60 overflow-y-auto">
           <CommandInput placeholder="Search location..." />
           <CommandList>
-            {locations.map((loc, idx) => (
+            {/* {locations.map((loc, idx) => (
               <CommandItem key={idx} onSelect={() => handleLocationSelect(loc)}>
                 {loc}
+              </CommandItem>
+            ))} */}
+
+            {countries.length === 0 && <div>Loading countries...</div>} {/* Check if countries are available */}
+              {countries.map((country, idx) => (
+                <CommandItem key={idx} onSelect={() => handleLocationSelect(country)}>
+                  {country}
               </CommandItem>
             ))}
           </CommandList>

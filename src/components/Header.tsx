@@ -6,11 +6,14 @@ import SearchBar from './SearchBar';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ShoppingCart } from "lucide-react";
 import Allcategories from './Allcategories';
-import { categories } from "@/constants/categories"; // make sure it's imported
+import CategoryNav from '@/components/CategoryNav';
+
 
 
 const Header = () => {
   const [selectedLocation, setSelectedLocation] = React.useState("");
+
+
 
   return (
     <>
@@ -74,23 +77,13 @@ const Header = () => {
 
      {/*third section*/}
     <section className="container mx-auto mt-2 mb-2">
-      <div className="flex items-center justify-between gap-4 bg-white px-4 py-2 rounded-lg shadow">
+      <div className="flex items-center justify-between gap-2 bg-white px-2 py-2 rounded-lg shadow">
 
         {/* All Categories Dropdown */}
         <Allcategories />
 
         {/* Dynamic Category Navigation Links */}
-        <nav className="flex flex-wrap items-center gap-4 text-sm font-medium text-gray-700">
-          {categories.map(({ value, label }) => (
-            <Link
-              key={value}
-              to={`/${value}`}
-              className="hover:text-blue-500 transition"
-            >
-              {label}
-            </Link>
-          ))}
-        </nav>
+        <CategoryNav />
 
       </div>
     </section>
@@ -100,3 +93,6 @@ const Header = () => {
 };
 
 export default Header;
+
+
+// https://countriesnow.space/api/v0.1/countries/
