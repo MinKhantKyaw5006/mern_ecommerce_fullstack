@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
-import SelectLocation from './SelectLocation';
-import SearchBar from './SearchBar';
+import SelectLocation from './Header/SelectLocation';
+import SearchBar from './Header/SearchBar';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ShoppingCart } from "lucide-react";
-import Allcategories from './Allcategories';
-import CategoryNav from '@/components/CategoryNav';
+import Allcategories from './Header/Allcategories';
+import CategoryNav from '@/components/Header/CategoryNav';
 
 
 
