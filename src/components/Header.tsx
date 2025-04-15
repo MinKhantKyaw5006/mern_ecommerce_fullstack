@@ -5,6 +5,7 @@ import SelectLocation from './SelectLocation';
 import SearchBar from './SearchBar';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ShoppingCart } from "lucide-react";
+import Allcategories from './Allcategories';
 
 
 
@@ -68,11 +69,16 @@ const Header = () => {
             </span>
           </div>
 
+        </div>
+      </section>  
 
-
-
+     {/*third section*/}
+      <section className="container mx-auto mt-2 mb-2">
+        <div>
+          <Allcategories />
         </div>
       </section>
+
     </>
   );
 };
