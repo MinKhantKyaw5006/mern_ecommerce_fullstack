@@ -1,49 +1,3 @@
-// import {
-//     Carousel,
-//     CarouselContent,
-//     CarouselItem,
-//     CarouselNext,
-//     CarouselPrevious,
-//   } from "@/components/ui/carousel"
-  
-//   import banner1 from "@/assets/banner1.png"
-//   import banner2 from "@/assets/banner2.png"
-//   import banner3 from "@/assets/banner3.png"
-  
-//   const banners = [banner1, banner2, banner3]
-  
-//   const HomeBanner = () => {
-//     return (
-//       <div className="relative w-full">
-//         <Carousel opts={{ loop: true }} className="w-full">
-//           {/* Remove the negative margin */}
-//           <CarouselContent className="!ml-0">
-//             {banners.map((banner, index) => (
-//               <CarouselItem
-//                 key={index}
-//                 className="!pl-0 w-full basis-full"
-//               >
-//                 <img
-//                   src={banner}
-//                   alt={`Banner ${index + 1}`}
-//                   className="w-full h-[400px] object-cover"
-//                 />
-//               </CarouselItem>
-//             ))}
-//           </CarouselContent>
-  
-//           {/* Arrows on top of banner */}
-//           <CarouselPrevious className="absolute top-1/2 left-4 -translate-y-1/2 z-10 bg-white/70 hover:bg-white shadow-md" />
-//           <CarouselNext className="absolute top-1/2 right-4 -translate-y-1/2 z-10 bg-white/70 hover:bg-white shadow-md" />
-
-//         </Carousel>
-//       </div>
-//     )
-//   }
-  
-//   export default HomeBanner
-
-
 import { useEffect, useState } from "react"
 import {
   Carousel,
@@ -57,8 +11,9 @@ import {
 import banner1 from "@/assets/banner1.png"
 import banner2 from "@/assets/banner2.png"
 import banner3 from "@/assets/banner3.png"
+import banner4 from "@/assets/banner4.png"
 
-const banners = [banner1, banner2, banner3]
+const banners = [banner1, banner2, banner3, banner4]
 
 const HomeBanner = () => {
   const [emblaApi, setEmblaApi] = useState<CarouselApi | null>(null)

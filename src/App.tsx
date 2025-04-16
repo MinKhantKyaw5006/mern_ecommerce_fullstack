@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import { createContext, useEffect } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 import HomeBanner from './components/HomeBanner';
+import NewsLetter from './components/Home/NewsLetter';
 
 // Context type
 interface AppContextType {
@@ -60,6 +61,7 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
+      <NewsLetter/>
     </Mycontext.Provider>
   );
 };
