@@ -1,14 +1,12 @@
-
+import React, { createContext, useEffect } from 'react';
 import './index.css';  
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
-import { createContext, useEffect } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
-//import HomeBanner from './components/HomeBanner';
-//import NewsLetter from './components/NewsLetter';
 import Footer from './components/Footer';
 import Listing from './pages/Listing';
+import { categories } from '@/constants/categories'; // Ensure you import your categories
 
 // Context type
 interface AppContextType {
@@ -36,11 +34,7 @@ const fetchCountries = async (): Promise<Country[]> => {
 
 // Component using query
 const AppContent = () => {
-  const {
-    data: countryList,
-    isSuccess,
-
-  } = useQuery({
+  const { data: countryList, isSuccess } = useQuery({
     queryKey: ['countries'],
     queryFn: fetchCountries,
   });
@@ -59,13 +53,25 @@ const AppContent = () => {
   return (
     <Mycontext.Provider value={values}>
       <Header />
-      {/* <HomeBanner/> */}
+      {/* Dynamic Routes */}
       <Routes>
+        {/* Home route */}
         <Route path="/" element={<Home />} />
-        <Route path='/electronics/laptops' element={<Listing/>}/>
+
+        {/* Dynamically generate routes for categories and subcategories */}
+        {categories.map(({ value, subcategories }) => (
+          <>
+            <Route key={value} path={`/${value}`} element={<Listing />} />
+            {subcategories && subcategories.length > 0 &&
+              subcategories.map(({ value: subValue }) => (
+                <Route key={subValue} path={`/${value}/${subValue}`} element={<Listing />} />
+              ))
+            }
+          </>
+        ))}
+
       </Routes>
-      {/* <NewsLetter/> */}
-      <Footer/>
+      <Footer />
     </Mycontext.Provider>
   );
 };
