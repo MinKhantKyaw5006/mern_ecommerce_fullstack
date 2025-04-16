@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import { createContext, useEffect } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 import HomeBanner from './components/HomeBanner';
-import NewsLetter from './components/Home/NewsLetter';
+import NewsLetter from './components/NewsLetter';
 import Footer from './components/Footer';
 
 // Context type

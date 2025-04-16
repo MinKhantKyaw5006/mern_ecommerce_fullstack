@@ -7,19 +7,25 @@ import {
 } from "@/components/ui/carousel";
 import ShopItemCard from "@/components/Home/ShopItemCard";
 import { shopItems, ShopItem } from "@/constants/shopitems";
+import { ArrowRight } from "lucide-react";
 
 const Home = () => {
   return (
     <section className="container mx-auto mt-4 mb-8 ">
       {/* Best Popular Products */}
       <div>
-        <div className="">
-          <h1 className="text-3xl font-bold text-gray-900">
-            Best Popular Products
-          </h1>
-          <h4 className="text-sm md:text-base font-medium text-gray-600 mt-1">
-            Don't miss out the latest offers until the end of March
-          </h4>
+        <div className="flex justify-between items-start">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">
+              Best Popular Products
+            </h1>
+            <h4 className="text-sm md:text-base font-medium text-gray-600 mt-1">
+              Don't miss out the latest offers until the end of March
+            </h4>
+          </div>
+          <button className="flex items-center border border-gray-300 text-gray-600 px-3 py-1.5 rounded-md mt-1">
+            View All <ArrowRight className="w-4 h-4 ml-1" />
+          </button>
         </div>
 
         <div className="relative w-full">
@@ -48,12 +54,17 @@ const Home = () => {
       </div>
 
       {/* New Items */}
-      <div className="">
-        <div className="mb-4">
-          <h1 className="text-3xl font-bold text-gray-900">New Items</h1>
-          <h4 className="text-sm md:text-base font-medium text-gray-600 mt-1">
-            Recently added fresh products just for you
-          </h4>
+      <div>
+        <div className="flex justify-between items-start mb-4">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">New Items</h1>
+            <h4 className="text-sm md:text-base font-medium text-gray-600 mt-1">
+              Recently added fresh products just for you
+            </h4>
+          </div>
+          <button className="flex items-center border border-gray-300 text-gray-600 px-3 py-1.5 rounded-md mt-1">
+            View All <ArrowRight className="w-4 h-4 ml-1" />
+          </button>
         </div>
 
         <div className="relative w-full">
