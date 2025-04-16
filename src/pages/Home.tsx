@@ -8,9 +8,15 @@ import {
 import ShopItemCard from "@/components/Home/ShopItemCard";
 import { shopItems, ShopItem } from "@/constants/shopitems";
 import { ArrowRight } from "lucide-react";
+import HomeBanner from "@/components/HomeBanner";
+import NewsLetter from "@/components/NewsLetter";
 
 const Home = () => {
   return (
+    <>
+      <section>
+      <HomeBanner/>
+    </section>
     <section className="container mx-auto mt-4 mb-8 ">
       {/* Best Popular Products */}
       <div>
@@ -92,6 +98,10 @@ const Home = () => {
         </div>
       </div>
     </section>
+    <section>
+      <NewsLetter/>
+    </section>
+    </>
   );
 };
 

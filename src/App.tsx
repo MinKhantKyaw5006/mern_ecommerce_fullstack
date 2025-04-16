@@ -5,9 +5,10 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import { createContext, useEffect } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
-import HomeBanner from './components/HomeBanner';
-import NewsLetter from './components/NewsLetter';
+//import HomeBanner from './components/HomeBanner';
+//import NewsLetter from './components/NewsLetter';
 import Footer from './components/Footer';
+import Listing from './pages/Listing';
 
 // Context type
 interface AppContextType {
@@ -58,11 +59,12 @@ const AppContent = () => {
   return (
     <Mycontext.Provider value={values}>
       <Header />
-      <HomeBanner/>
+      {/* <HomeBanner/> */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/electronics/laptops' element={<Listing/>}/>
       </Routes>
-      <NewsLetter/>
+      {/* <NewsLetter/> */}
       <Footer/>
     </Mycontext.Provider>
   );

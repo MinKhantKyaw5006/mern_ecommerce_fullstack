@@ -1,8 +1,11 @@
 
 import { Mail, MapPin, PhoneCall } from "lucide-react";
 
+
 const Footer = () => {
   return (
+    
+
     <footer className="bg-gray-100 text-gray-800">
       {/* Feature Highlights */}
       <div className="grid md:grid-cols-5 gap-6 px-6 py-10 border-b border-gray-300">
@@ -130,6 +133,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+
   );
 };
 
